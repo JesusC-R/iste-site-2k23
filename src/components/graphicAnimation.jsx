@@ -1,12 +1,12 @@
-import React from 'react'
-import Lottie from "lottie-react"
+import React from "react";
+import Lottie from "lottie-react";
 
 const graphicAnimation = ({ animationData }) => {
-    return (
-      <div>
-        <Lottie animationData={animationData} />
-      </div>
-    );
-  };
+  return (
+    <div>
+      <Lottie animationData={animationData} />
+    </div>
+  );
+};
 
-export default graphicAnimation
+export default graphicAnimation;

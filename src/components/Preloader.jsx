@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
-import { preLoaderAnim } from '../animation/preloaderAnim'
+import React, { useEffect } from "react";
+import { preLoaderAnim } from "../animation/preloaderAnim";
 const Preloader = () => {
-
-  useEffect(()=>{
-    preLoaderAnim()
-  })
+  useEffect(() => {
+    preLoaderAnim();
+  });
 
   return (
     <div className="preloader">
@@ -14,7 +13,7 @@ const Preloader = () => {
         <span>Vibe.</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Preloader
+export default Preloader;

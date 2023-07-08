@@ -1,5 +1,6 @@
 {
-  "name": "iste-site",
+  "homepage": "http://istenith.github.io",
+  "name": "istenith.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +11,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "buffer": "^6.0.3",
     "framer-motion": "^10.12.16",
     "gsap": "^3.12.1",
     "lottie-react": "^2.4.0",
@@ -20,16 +22,18 @@
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.1",
     "react-icons": "^4.9.0",
+    "react-markdown": "^8.0.7",
     "react-parallax": "^3.5.1",
-    "react-particles": "^2.10.1",
     "react-router-dom": "^6.13.0",
     "react-scripts": "5.0.1",
+    "remark-gfm": "^3.0.1",
     "simple-parallax-js": "^5.6.2",
-    "tsparticles": "^2.10.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -51,5 +55,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(react-markdown|vfile))/"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "babel-jest": "^29.5.0",
+    "babel-preset-react-app": "^10.0.1",
+    "esm": "^3.2.25",
+    "gh-pages": "^5.0.0"
   }
 }

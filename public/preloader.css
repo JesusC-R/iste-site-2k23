@@ -1,4 +1,4 @@
-.preloader{
+.preloader {
   height: 100vh;
   width: 100%;
   background: #000;
@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-.preloader .texts-container{
+.preloader .texts-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,7 +24,4 @@
   font-weight: 800;
   overflow: hidden;
   color: #fff;
-
 }
-
-

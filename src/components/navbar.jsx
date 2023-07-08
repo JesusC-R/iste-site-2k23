@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import DehazeIcon from '@mui/icons-material/Dehaze';
-import CloseIcon from '@mui/icons-material/Close';
+import DehazeIcon from "@mui/icons-material/Dehaze";
+import CloseIcon from "@mui/icons-material/Close";
 import DarkMode from "./DarkMode/DarkMode";
+import LightLogo from "../static/images/iste-logo-lightblue.png";
+import DarkLogo from "../static/images/iste-logo-dark.png";
 
-const Logo_black= require('../static/images/iste-black.png');
-
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   const [mobile, setMobile] = useState(false);
 
   const handleResize = () => {
@@ -29,28 +29,34 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-      <img src={Logo_black} alt="Logo" style={{'width':'9vh','padding':'1px'}}/>
+        <Link to="/">
+          <img
+            src={theme === "light" ? LightLogo : DarkLogo}
+            alt="Logo"
+            style={{ width: "9vh", padding: "1px" }}
+          />
+        </Link>
         <button className="mobile-menu-icon" onClick={toggleMobileMenu}>
           {mobile ? <CloseIcon /> : <DehazeIcon />}
         </button>
         <ul className={mobile ? "nav-links-mobile" : "nav-links"}>
-          <li onClick={() => setMobile(false)}>
+          <li onClick={() => setMobile(false)} className="navlink-text">
             <Link to="/">Home</Link>
           </li>
-          <li onClick={() => setMobile(false)}>
+          <li onClick={() => setMobile(false)} className="navlink-text">
             <Link to="/members">Members</Link>
           </li>
-          <li onClick={() => setMobile(false)}>
-            <Link to="/event">Events</Link>
+          <li onClick={() => setMobile(false)} className="navlink-text">
+            <Link to="/events">Events</Link>
           </li>
-          <li onClick={() => setMobile(false)}>
+          <li onClick={() => setMobile(false)} className="navlink-text">
             <Link to="/gallery">Gallery</Link>
           </li>
-          <li onClick={() => setMobile(false)}>
-            <Link to="/blog">Blog</Link>
+          <li onClick={() => setMobile(false)} className="navlink-text">
+            <Link to="/blogs">Blogs</Link>
           </li>
           <li onClick={() => setMobile(false)}>
-            <DarkMode />
+           <DarkMode theme={theme} toggleTheme={toggleTheme} />
           </li>
         </ul>
       </nav>
